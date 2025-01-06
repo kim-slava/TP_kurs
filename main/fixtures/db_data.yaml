@@ -1,0 +1,158 @@
+- model: main.account
+  pk: 1
+  fields:
+    username: "user1"
+    email: "user1@example.com"
+
+- model: main.account
+  pk: 2
+  fields:
+    username: "user2"
+    email: "user2@example.com"
+
+- model: main.account
+  pk: 3
+  fields:
+    username: "user3"
+    email: "user3@example.com"
+
+- model: main.account
+  pk: 4
+  fields:
+    username: "john_doe"
+    email: "john.doe@example.com"
+
+- model: main.account
+  pk: 5
+  fields:
+    username: "jane_smith"
+    email: "jane.smith@example.com"
+
+- model: main.account
+  pk: 6
+  fields:
+    username: "alice_jones"
+    email: "alice.jones@example.com"
+
+- model: main.account
+  pk: 7
+  fields:
+    username: "bob_brown"
+    email: "bob.brown@example.com"
+
+- model: main.post
+  pk: 1
+  fields:
+    account: 1
+    post_date: "2025-01-01T10:00:00Z"
+    likes: 120
+    dislikes: 5
+    content_type: "text"
+
+- model: main.post
+  pk: 2
+  fields:
+    account: 1
+    post_date: "2025-01-02T12:30:00Z"
+    likes: 80
+    dislikes: 3
+    content_type: "photo"
+
+- model: main.post
+  pk: 3
+  fields:
+    account: 2
+    post_date: "2025-01-03T14:00:00Z"
+    likes: 150
+    dislikes: 10
+    content_type: "video"
+
+- model: main.post
+  pk: 4
+  fields:
+    account: 2
+    post_date: "2025-01-03T16:15:00Z"
+    likes: 95
+    dislikes: 7
+    content_type: "text"
+
+- model: main.post
+  pk: 5
+  fields:
+    account: 3
+    post_date: "2025-01-04T09:45:00Z"
+    likes: 200
+    dislikes: 1
+    content_type: "photo"
+
+- model: main.post
+  pk: 6
+  fields:
+    account: 1
+    post_date: "2025-01-01T10:00:00Z"
+    likes: 120
+    dislikes: 5
+    content_type: "text"
+
+- model: main.post
+  pk: 7
+  fields:
+    account: 1
+    post_date: "2025-01-02T12:30:00Z"
+    likes: 80
+    dislikes: 3
+    content_type: "photo"
+
+- model: main.post
+  pk: 8
+  fields:
+    account: 2
+    post_date: "2025-01-03T14:00:00Z"
+    likes: 150
+    dislikes: 10
+    content_type: "video"
+
+- model: main.post
+  pk: 9
+  fields:
+    account: 2
+    post_date: "2025-01-03T16:15:00Z"
+    likes: 95
+    dislikes: 7
+    content_type: "text"
+
+- model: main.post
+  pk: 10
+  fields:
+    account: 4
+    post_date: "2025-01-04T09:45:00Z"
+    likes: 200
+    dislikes: 1
+    content_type: "photo"
+
+- model: main.post
+  pk: 11
+  fields:
+    account: 5
+    post_date: "2025-01-05T11:20:00Z"
+    likes: 110
+    dislikes: 2
+    content_type: "video"
+
+- model: main.post
+  pk: 12
+  fields:
+    account: 6
+    post_date: "2025-01-06T13:10:00Z"
+    likes: 130
+    dislikes: 4
+    content_type: "text"
+
+- model: main.post
+  pk: 13
+  fields:
+    account: 7
+    post_date: "2025-01-06T15:30:00Z"
+    likes: 75
+    dislikes: 8
+    content_type: "photo"

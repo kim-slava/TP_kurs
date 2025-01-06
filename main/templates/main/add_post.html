@@ -1,0 +1,53 @@
+{#<!DOCTYPE html>#}
+{#<html lang="en">#}
+{#<head>#}
+{#    <meta charset="UTF-8">#}
+{#    <meta name="viewport" content="width=device-width, initial-scale=1.0">#}
+{#    <title>Add New Post</title>#}
+{#</head>#}
+{#<body>#}
+{#    <h1>Create a New Post</h1>#}
+{##}
+{#    <!-- Отображаем сообщения об успешном добавлении поста -->#}
+{#    {% if messages %}#}
+{#        <ul>#}
+{#            {% for message in messages %}#}
+{#                <li>{{ message }}</li>#}
+{#            {% endfor %}#}
+{#        </ul>#}
+{#    {% endif %}#}
+{##}
+{#    <!-- Форма добавления нового поста -->#}
+{#    <form method="POST">#}
+{#        {% csrf_token %}#}
+{#        {{ form.as_p }}#}
+{#        <button type="submit">Add Post</button>#}
+{#    </form>#}
+{#</body>#}
+{#</html>#}
+
+{% extends 'main/layout.html' %}
+
+{% block title %}
+    Добавить пост
+{% endblock %}
+
+{% block content %}
+    <h1>Добавить новый пост</h1>
+
+    <!-- Отображаем сообщения об успешном добавлении поста -->
+    {% if messages %}
+        <ul>
+            {% for message in messages %}
+                <li>{{ message }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+
+    <!-- Форма добавления нового поста -->
+    <form method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Add Post</button>
+    </form>
+{% endblock %}

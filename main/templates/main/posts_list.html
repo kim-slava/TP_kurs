@@ -1,0 +1,105 @@
+
+{#<!DOCTYPE html>#}
+{#<html lang="en">#}
+{#<head>#}
+{#    <meta charset="UTF-8">#}
+{#    <meta name="viewport" content="width=device-width, initial-scale=1.0">#}
+{#    <title>All Posts</title>#}
+{#    <style>#}
+{#        table {#}
+{#            width: 100%;#}
+{#            border-collapse: collapse;#}
+{#            margin-top: 20px;#}
+{#        }#}
+{#        th, td {#}
+{#            padding: 10px;#}
+{#            text-align: left;#}
+{#            border: 1px solid #ddd;#}
+{#        }#}
+{#        th {#}
+{#            background-color: #f2f2f2;#}
+{#        }#}
+{#        a {#}
+{#            color: #007bff;#}
+{#            text-decoration: none;#}
+{#        }#}
+{#        a:hover {#}
+{#            text-decoration: underline;#}
+{#        }#}
+{#    </style>#}
+{#</head>#}
+{#<body>#}
+{#    <h1>All Posts</h1>#}
+{#    <table>#}
+{#        <thead>#}
+{#            <tr>#}
+{#                <th>Post ID</th>#}
+{#                <th>Account</th>#}
+{#                <th>Post Date</th>#}
+{#                <th>Likes</th>#}
+{#                <th>Dislikes</th>#}
+{#                <th>Content Type</th>#}
+{#                <th>Statistics</th>#}
+{#            </tr>#}
+{#        </thead>#}
+{#        <tbody>#}
+{#            {% for post in posts %}#}
+{#            <tr>#}
+{#                <td>{{ post.id }}</td>#}
+{#                <td>{{ post.account.username }}</td>#}
+{#                <td>{{ post.post_date }}</td>#}
+{#                <td>{{ post.likes }}</td>#}
+{#                <td>{{ post.dislikes }}</td>#}
+{#                <td>{{ post.content_type }}</td>#}
+{#                <td><a href="{% url 'account_statistics' account_id=post.account.id %}">View Statistics</a></td>#}
+{#            </tr>#}
+{#            {% endfor %}#}
+{#        </tbody>#}
+{#    </table>#}
+{#</body>#}
+{#</html>#}
+{##}
+
+{% extends 'main/layout.html' %}
+
+{% block title %}
+    Список постов
+{% endblock %}
+
+{% block content %}
+    <h1>All Posts</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Post ID</th>
+                <th>Account</th>
+                <th>Post Date</th>
+                <th>Likes</th>
+                <th>Dislikes</th>
+                <th>Content Type</th>
+                <th>Delete</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for post in posts %}
+            <tr>
+                <td>{{ post.id }}</td>
+                <td>{{ post.account.username }}</td>
+                <td>{{ post.post_date }}</td>
+                <td>{{ post.likes }}</td>
+                <td>{{ post.dislikes }}</td>
+                <td>{{ post.content_type }}</td>
+{#                <td><a href="{% url 'account_statistics' account_id=post.account.id %}">View Statistics</a></td>#}
+                <td>
+                    <!-- Кнопка для удаления поста -->
+{#                    <form method="POST" action="{% url 'delete_post' post_id=post.id %}">#}
+                    <form method="POST" action="{% url 'delete_post' pk=post.id %}">
+                        {% csrf_token %}
+                        <button type="submit" style="color: white; background-color: red; border: none; padding: 5px 10px; cursor: pointer;">Delete</button>
+                    </form>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

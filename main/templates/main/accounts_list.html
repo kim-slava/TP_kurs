@@ -1,0 +1,63 @@
+{#<!DOCTYPE html>#}
+{#<html lang="en">#}
+{#<head>#}
+{#    <meta charset="UTF-8">#}
+{#    <meta name="viewport" content="width=device-width, initial-scale=1.0">#}
+{#    <title>All Accounts</title>#}
+{#</head>#}
+{##}
+{#<body>#}
+{#    <h1>All Accounts</h1>#}
+{##}
+{#    <!-- Таблица для отображения всех аккаунтов -->#}
+{#    <table>#}
+{#        <thead>#}
+{#            <tr>#}
+{#                <th>Username</th>#}
+{#                <th>Email</th>#}
+{#                <th>Statistics</th>#}
+{#            </tr>#}
+{#        </thead>#}
+{#        <tbody>#}
+{#            {% for account in accounts %}#}
+{#                <tr>#}
+{#                    <td>{{ account.username }}</td>#}
+{#                    <td>{{ account.email }}</td>#}
+{#                    <td><a href="{% url 'account_statistics' account_id=account.id %}">View Statistics</a></td>#}
+{#                </tr>#}
+{#            {% endfor %}#}
+{#        </tbody>#}
+{#    </table>#}
+{#</body>#}
+{#</html>#}
+
+
+{% extends 'main/layout.html' %}
+
+{% block title %}
+    Все аккаунты
+{% endblock %}
+
+{% block content %}
+    <h1>Все аккаунты</h1>
+
+    <!-- Таблица для отображения всех аккаунтов -->
+    <table>
+        <thead>
+            <tr>
+                <th>Username</th>
+                <th>Email</th>
+                <th>Statistics</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for account in accounts %}
+                <tr>
+                    <td>{{ account.username }}</td>
+                    <td>{{ account.email }}</td>
+                    <td><a href="{% url 'account_statistics' account_id=account.id %}">View Statistics</a></td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

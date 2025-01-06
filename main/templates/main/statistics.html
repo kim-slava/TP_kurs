@@ -1,0 +1,29 @@
+{#<!DOCTYPE html>#}
+{#<html lang="en">#}
+{#<head>#}
+{#    <meta charset="UTF-8">#}
+{#    <title>Title</title>#}
+{#</head>#}
+{#<body>#}
+{##}
+{#    <h1>Statistics for {{ account.username }}</h1>#}
+{#    <p>Total likes: {{ likes_sum }}</p>#}
+{#    <p>Total dislikes: {{ dislikes_sum }}</p>#}
+{#    <p>Average likes: {{ average_likes }}</p>#}
+{#    <p>Median likes: {{ median_likes }}</p>#}
+{#</body>#}
+{#</html>#}
+
+{% extends 'main/layout.html' %}
+
+{% block title %}
+    Статистика
+{% endblock %}
+
+{% block content %}
+    <h1>Statistics for {{ account.username }}</h1>
+    <p>Total likes: {{ likes_sum }}</p>
+    <p>Total dislikes: {{ dislikes_sum }}</p>
+    <p>Average likes: {{ average_likes }}</p>
+    <p>Median likes: {{ median_likes }}</p>
+{% endblock %}

@@ -1,0 +1,48 @@
+body{
+    background: #4b4e4e;
+    color: white;
+}
+
+aside{
+    float: left;
+    background: #545454;
+    width: 20%;
+    padding: 2.5%;
+    height: 100vh;
+    color: #fff;
+    border-right: 5px solid #383838;
+}
+
+aside ul {
+    list-style: none;
+}
+
+aside li {
+    color: white;
+    display: block;
+    margin-top: 20px;
+}
+
+table {
+    width: 70%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+th, td {
+    padding: 10px;
+    text-align: left;
+    border: 1px solid #ddd;
+}
+th {
+    background-color: #f2f2f2;
+    color: #505050;
+}
+a {
+    color: #007bff;
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: underline;
+}
+
+

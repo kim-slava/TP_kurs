@@ -1,0 +1,54 @@
+{#<!DOCTYPE html>#}
+{#<html lang="en">#}
+{#<head>#}
+{#    <meta charset="UTF-8">#}
+{#    <meta name="viewport" content="width=device-width, initial-scale=1.0">#}
+{#    <title>Add New Account</title>#}
+{#</head>#}
+{#<body>#}
+{#    <h1>Create a New Account</h1>#}
+{##}
+{#    <!-- Отображаем сообщения об успешной регистрации -->#}
+{#    {% if messages %}#}
+{#        <ul>#}
+{#            {% for message in messages %}#}
+{#                <li>{{ message }}</li>#}
+{#            {% endfor %}#}
+{#        </ul>#}
+{#    {% endif %}#}
+{##}
+{#    <!-- Форма добавления нового пользователя -->#}
+{#    <form method="POST">#}
+{#        {% csrf_token %}#}
+{#        {{ form.as_p }}#}
+{#        <button type="submit">Create Account</button>#}
+{#    </form>#}
+{#</body>#}
+{#</html>#}
+
+
+{% extends 'main/layout.html' %}
+
+{% block title %}
+    Add New Account
+{% endblock %}
+
+{% block content %}
+    <h1>Создать новый аккаунт</h1>
+
+    <!-- Отображаем сообщения об успешной регистрации -->
+    {% if messages %}
+        <ul>
+            {% for message in messages %}
+                <li>{{ message }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+
+    <!-- Форма добавления нового пользователя -->
+    <form method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Create Account</button>
+    </form>
+{% endblock %}
